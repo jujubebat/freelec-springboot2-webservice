@@ -4,7 +4,6 @@ buildscript {
     }
     repositories {
         mavenCentral()
-        jcenter()
     }
     dependencies {
         classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}") // 2.1.7. RELEASE 버전 사용됨
@@ -18,6 +17,7 @@ apply plugin: 'io.spring.dependency-management' // 스프링 부트의 의존성
 
 group 'com.jujubebat.book'
 version '1.0-SNAPSHOT'
+sourceCompatibility = 1.8
 
 repositories { // 각종 의존성들을 어떤 원격 저장소에서 받을지 설정
     mavenCentral()
@@ -25,9 +25,8 @@ repositories { // 각종 의존성들을 어떤 원격 저장소에서 받을지
 
 dependencies {
     compile('org.springframework.boot:spring-boot-starter-web')
+    compile('org.projectlombok:lombok')
+    compile('org.springframework.boot:spring-boot-starter-data-jpa')
+    compile('com.h2database:h2')
     testCompile('org.springframework.boot:spring-boot-starter-test')
-}
-
-test {
-    useJUnitPlatform()
 }

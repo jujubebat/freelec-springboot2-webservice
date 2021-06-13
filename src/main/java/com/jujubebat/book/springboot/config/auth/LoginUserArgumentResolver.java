@@ -1,5 +1,6 @@
 package com.jujubebat.book.springboot.config.auth;
 
+import com.jujubebat.book.springboot.config.auth.dto.SessionUser;
 import javax.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
 import org.springframework.core.MethodParameter;

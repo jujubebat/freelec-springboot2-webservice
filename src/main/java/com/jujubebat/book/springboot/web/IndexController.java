@@ -1,7 +1,7 @@
 package com.jujubebat.book.springboot.web;
 
 import com.jujubebat.book.springboot.config.auth.LoginUser;
-import com.jujubebat.book.springboot.config.auth.SessionUser;
+import com.jujubebat.book.springboot.config.auth.dto.SessionUser;
 import com.jujubebat.book.springboot.service.PostsService;
 import com.jujubebat.book.springboot.web.dto.PostsResponseDto;
 import javax.servlet.http.HttpSession;

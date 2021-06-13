@@ -1,5 +1,6 @@
-package com.jujubebat.book.springboot.config.auth;
+package com.jujubebat.book.springboot.config;
 
+import com.jujubebat.book.springboot.config.auth.LoginUserArgumentResolver;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Configuration;

@@ -1,4 +1,4 @@
-package com.jujubebat.book.springboot.config.auth;
+package com.jujubebat.book.springboot.config.auth.dto;
 
 import com.jujubebat.book.springboot.domain.user.User;
 import java.io.Serializable;
@@ -16,5 +16,4 @@ public class SessionUser implements Serializable {
         this.email = user.getEmail();
         this.picture = user.getPicture();
     }
-
 }

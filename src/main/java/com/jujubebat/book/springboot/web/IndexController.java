@@ -1,7 +1,9 @@
 package com.jujubebat.book.springboot.web;
 
+import com.jujubebat.book.springboot.config.auth.SessionUser;
 import com.jujubebat.book.springboot.service.PostsService;
 import com.jujubebat.book.springboot.web.dto.PostsResponseDto;
+import javax.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -13,10 +15,16 @@ import org.springframework.web.bind.annotation.PathVariable;
 public class IndexController {
 
     private final PostsService postsService;
+    private final HttpSession httpSession;
 
     @GetMapping("/")
     public String index(Model model) {
         model.addAttribute("posts", postsService.findAllDesc());
+        SessionUser user = (SessionUser) httpSession.getAttribute("user");
+
+        if (user != null) {
+            model.addAttribute("userName", user.getName());
+        }
         return "index";
     }
 
@@ -31,4 +39,5 @@ public class IndexController {
         model.addAttribute("post", dto);
         return "posts-update";
     }
+
 }
